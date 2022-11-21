@@ -23,21 +23,21 @@
 ## Instalación de paquetes 
 
 ### Máquina 
-    * NodeJs 
-    * Python 3
-        - Pyenv 
-        - Pyteal 
+* NodeJs 
+* Python 3
+    - Pyenv 
+    - Pyteal 
 
 ### Proyectos
 
-    * Algosdk
-    ```npm install algosdk ```
+* Algosdk
+```npm install algosdk ```
 
-    * Dotenv  
-    ```npm install dotenv ```
+* Dotenv  
+```npm install dotenv ```
 
-    * Crear un documento .env 
-        - Correr ```source .env ```
+* Crear un documento .env 
+    - Correr ```source .env ```
 
 ## Correr un script 
 ```node name.js```
