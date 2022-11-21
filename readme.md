@@ -7,7 +7,7 @@
 
 2) Clonar el repositorio de https://github.com/algorand/sandbox 
 
-3) Dentro de sandbox Correr ``` ./sandbox up ```
+3) Dentro de sandbox Correr ``` ./sandbox up ```. Para confirmar Podemos ver en el Docker la instancia corriendo.
 
 4) Correr ```./sandbox goal account list```  Para ver las cuentas en el nodo demo:
     Existen dos tipos de cuentas: Online y Offline
@@ -21,19 +21,26 @@
 7) Más comando en : https://developer.algorand.org/
 
 ## Instalación de paquetes 
-En todos los proyectos que se utilicen se necesitan dos cosas : 
 
-### Algosdk
-```npm install algosdk ```
+### Máquina 
+    * NodeJs 
+    * Python 3
+        - Pyenv 
+        - Pyteal 
 
-### Dotenv  
-```npm install dotenv ```
+### Proyectos
 
+    * Algosdk
+    ```npm install algosdk ```
 
-C_Algorand_Web3 Public
-Curso de la blockchain de Algorand sobre web 3, contratos inteligentes, creación de nodos,etc.
+    * Dotenv  
+    ```npm install dotenv ```
 
+    * Crear un documento .env 
+        - Correr ```source .env ```
 
+## Correr un script 
+    ```node name.js```
 
 Desde el mismo portafolio correr yarn init y dejar todo en blanco 
 

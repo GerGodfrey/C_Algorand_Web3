@@ -2,4 +2,5 @@
 sandbox
 docs
 node_modules 
-#Files 
+#Files Extension 
+.env
