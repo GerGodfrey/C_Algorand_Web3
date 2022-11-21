@@ -40,7 +40,7 @@
         - Correr ```source .env ```
 
 ## Correr un script 
-    ```node name.js```
+```node name.js```
 
 Desde el mismo portafolio correr yarn init y dejar todo en blanco 
 
