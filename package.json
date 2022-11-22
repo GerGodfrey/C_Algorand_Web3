@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@algo-builder/algob": "3.2.0",
     "algosdk": "^1.23.2",
     "dotenv": "^16.0.3"
   }
