@@ -1,24 +1,20 @@
 # Pasos 
 
 
-## Crear y Correr Nodo 
+## Crear y Correr Nodo Sanbox 
 
 1) Correr docker 
-
 2) Clonar el repositorio de https://github.com/algorand/sandbox 
-
 3) Dentro de sandbox Correr ``` ./sandbox up ```. Para confirmar Podemos ver en el Docker la instancia corriendo.
-
 4) Correr ```./sandbox goal account list```  Para ver las cuentas en el nodo demo:
     Existen dos tipos de cuentas: Online y Offline
-
 5) Correr ```./sandbox test``` para ver cómo correr 
+6) Extraer nemónico ```./sandbox goal account export --address YOUR_ACCOUNT_ADDRESS```
+7) Ver la lista de las wallets ```./sandbox goal wallet list```
+8) Más comando en : https://developer.algorand.org/
 
-5) Extraer nemónico ```./sandbox goal account export --address YOUR_ACCOUNT_ADDRESS```
-
-6) Ver la lista de las wallets ```./sandbox goal wallet list```
-
-7) Más comando en : https://developer.algorand.org/
+## Crear y Correr Algo Builder 
+1) ``` npm install --global yarn```
 
 ## Instalación de paquetes 
 
@@ -26,8 +22,17 @@
 * NodeJs 
 * Python 3
     - Pyenv 
-    - Pyteal 
-
+    - Pyteal
+* #### Algo Builder 
+1) ``` npm install --global yarn```
+2) ```yarn init``` and put all questions in white 
+3) Creae the framework ```yarn add @algo-builder/algob@3.2.0```
+4) Run the proyect ``` yarn run algob init . ```
+5) Copiar el archivo Pipfile en la raíz de la carpeta : https://github.com/scale-it/algo-builder/blob/master/Pipfile
+6) Run ``` pipenv install ```
+7) Activar el virtualenv ``` pipenv shell ```
+8) Change the master account for the sandbox wallet 
+8) Deploy SC ``` yarn run algob deploy ``` 
 ### Proyectos
 
 * Algosdk
@@ -42,11 +47,9 @@
 ## Correr un script 
 ```node name.js```
 
-Desde el mismo portafolio correr yarn init y dejar todo en blanco 
 
-3) Correr yarn add @algo-builder/algob@3.2.0
-4) Inicializar el proyecto yarn run algob init .
-5) Activar el virtualenv pipenv shell 
+
+
 6) Correr pipenv run ( no lo hicimos)
 
 Deploy los contratos 
