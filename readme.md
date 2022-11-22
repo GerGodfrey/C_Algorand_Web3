@@ -13,6 +13,39 @@
 7) Ver la lista de las wallets ```./sandbox goal wallet list```
 8) Más comando en : https://developer.algorand.org/
 
+### Otros comandos 
+
+Datos 
+    Alice Key: 2T5BSXL4C2WMQFNNTAJD66F4ACZ5J27KZPPPTGELUW6BO7V46IH6FUBI44
+    Tom Key: TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ
+    
+
+1) Crear nueva cuenta  ``` ./sandbox goal account new alice```
+
+2) Mandar Tokens  ```./sandbox goal clerk send --from 'public_key' --to 'name' --amount 100000```
+
+3) Mandar Tokens 
+    ```./sandbox goal clerk send --from 'public_key' --to 'name' --amount 100000```
+./sandbox goal clerk send --from BLBXRGMAPN4CWNNFMM6X3IC7BXV7BYCLO5OITIUSNTBRTY6KXJBG24EA5M --to alice --amount 1000000
+
+4) Asegurar Doble
+    ``` ./sandbox goal clerk send --from 'name1' --to 'name1' --amount 0 --rekey-to 'publick key name2'```
+./sandbox goal clerk send --from alice --to alice --amount 0 --rekey-to TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ
+Ahora si intentamos mandar ALGOs de la cuenta de alice a tom, fallará. Entonces, esta TRX debe de ser confirmada por tom 
+
+5) Crear un file de la transacción
+    ``` ./sandbox goal clerk send --from 'name1' --to 'name2' --amount 10000 --out send-single.txn``` 
+./sandbox goal clerk send --from alice --to tom --amount 10000 --out send-single.txn
+
+6) Firmar una transacción 
+    ```./sandbox goal clerk sign --signer 'publick key name2' --infile send-single.txn --outfile send-single.stxn```
+./sandbox goal clerk sign --signer TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ --infile send-single.txn --outfile send-single.stxn
+
+7) Atender la firma y TRX
+    ```./sandbox goal clerk rawsend --filename send-single.stxn```
+
+8)Asegurar Triple
+
 ## Crear y Correr Algo Builder 
 1) ``` npm install --global yarn```
 
@@ -47,16 +80,12 @@
 ## Correr un script 
 ```node name.js```
 
+## AlgoSigner 
 
+Podemos crear y conectar una wallet. Para conocer los comandos hay que visitar : https://github.com/PureStake/algosigner
 
-
-6) Correr pipenv run ( no lo hicimos)
-
-Deploy los contratos 
-    yarn run algob deploy
-
-8) Cambiar algob.config 
-9) Vismo como ocupar postman para las querys 
+## Faucet Algorand Tesnet 
+https://bank.testnet.algorand.network/
 
 ## LESSON 3 
 
@@ -65,40 +94,7 @@ Deploy los contratos
 ### Rekeying
 Es mantener una llave pública, pero asegurándola con otra llave privada. Entonces para que salgan fondos de la primera cuenta deberán de estar firmados por la segunda.
 
-Crear nueva cuenta : 
-    ./sandbox goal account new alice
-
-    Alice Key: 2T5BSXL4C2WMQFNNTAJD66F4ACZ5J27KZPPPTGELUW6BO7V46IH6FUBI44
-    Tom Key: TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ
-
-Mandar Tokens 
-    ./sandbox goal clerk send --from 'public_key' --to 'name' --amount 100000
-
-    ./sandbox goal clerk send --from BLBXRGMAPN4CWNNFMM6X3IC7BXV7BYCLO5OITIUSNTBRTY6KXJBG24EA5M --to alice --amount 1000000
-
-Asegurar Doble
-    ./sandbox goal clerk send --from 'name1' --to 'name1' --amount 0 --rekey-to 'publick key name2'
-
-    ./sandbox goal clerk send --from alice --to alice --amount 0 --rekey-to TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ
-
-    Ahora si intentamos mandar ALGOs de la cuenta de alice a tom, fallará.
-    Entonces, esta TRX debe de ser confirmada por tom 
-
-Crear un file de la transacción
-    ./sandbox goal clerk send --from 'name1' --to 'name2' --amount 10000 --out send-single.txn
-
-    ./sandbox goal clerk send --from alice --to tom --amount 10000 --out send-single.txn
-
-Firmar una transacción 
-    ./sandbox goal clerk sign --signer 'publick key name2' --infile send-single.txn --outfile send-single.stxn
-
-    ./sandbox goal clerk sign --signer TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ --infile send-single.txn --outfile send-single.stxn
-
-Atender la firma y TRX
-    ./sandbox goal clerk rawsend --filename send-single.stxn
-
-Asegurar Triple
-
 ### LINKS 
 
 Demo accounts wallets :  https://github.com/Algo-Foundry/demo-accounts-wallets
+https://github.com/PureStake/algosigner
