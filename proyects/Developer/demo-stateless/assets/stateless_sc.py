@@ -3,7 +3,7 @@ from pyteal import *
 def stateless_sc():
 
     def basic_checks(txn: Txn): return And(
-        txn.rekey_to() == Global.zero_address(),
+        txn.rekey_to() == Global.zero_address(), #que no tenga rekey
         txn.close_remainder_to() == Global.zero_address()
     )
 
@@ -13,7 +13,7 @@ def stateless_sc():
     program = And(
         basic_checks(Txn),
         Txn.amount() <= Int(1000000),
-        Txn.receiver() == Addr("FCGJMWQAVL5G33FAELMNLFJ2LFOEFA5PD2FDF5CR77ZNOPLWASKFH7UWRU")
+        Txn.receiver() == Addr("TD3W6ZKVSFLHP3R3FKB2F27I67LYVVO3NTY7FRBTCQAI33CCEMNJZAVMGQ")
     )
 
     return program
