@@ -1,0 +1,2 @@
+escrow:
+	python3 ./assets/escrow.py > ./artifacts/escrow.teal "{"RECEIVER_ADDRESS": "2T5BSXL4C2WMQFNNTAJD66F4ACZ5J27KZPPPTGELUW6BO7V46IH6FUBI44"}"

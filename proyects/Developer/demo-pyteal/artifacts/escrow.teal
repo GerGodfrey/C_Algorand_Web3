@@ -1,0 +1,13 @@
+#pragma version 6
+txn RekeyTo
+global ZeroAddress
+==
+txn CloseRemainderTo
+global ZeroAddress
+==
+&&
+txn Receiver
+addr 2T5BSXL4C2WMQFNNTAJD66F4ACZ5J27KZPPPTGELUW6BO7V46IH6FUBI44
+==
+&&
+return
