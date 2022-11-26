@@ -1,0 +1,233 @@
+filename: sc_approval.py
+timestamp: 1669422014
+compiled: BiACAQAmAQVDb3VudDEYIxJAAHIxGSISQABpMRmBAhJAAF8xGYEEEkAAVTEZgQUSQABLMRkjEkAAAQAyBCISRDYaAIADQWRkEkAAJjYaAIAGRGVkdWN0EkAAAQAoZDUANAAjDUAAAiJDKDQAIglnQv/1KGQ1ACg0ACIIZyJDIkMjQyNDI0MoI2ciQw==
+compiledHash: DZHFFL33OOQHDAMCUHCKJKT7SQVP2GPXTVQBAQFZKFQBPLZJEDNFW7A6PM
+srcHash: 2395890342
+base64ToBytes:
+  - 6
+  - 32
+  - 2
+  - 1
+  - 0
+  - 38
+  - 1
+  - 5
+  - 67
+  - 111
+  - 117
+  - 110
+  - 116
+  - 49
+  - 24
+  - 35
+  - 18
+  - 64
+  - 0
+  - 114
+  - 49
+  - 25
+  - 34
+  - 18
+  - 64
+  - 0
+  - 105
+  - 49
+  - 25
+  - 129
+  - 2
+  - 18
+  - 64
+  - 0
+  - 95
+  - 49
+  - 25
+  - 129
+  - 4
+  - 18
+  - 64
+  - 0
+  - 85
+  - 49
+  - 25
+  - 129
+  - 5
+  - 18
+  - 64
+  - 0
+  - 75
+  - 49
+  - 25
+  - 35
+  - 18
+  - 64
+  - 0
+  - 1
+  - 0
+  - 50
+  - 4
+  - 34
+  - 18
+  - 68
+  - 54
+  - 26
+  - 0
+  - 128
+  - 3
+  - 65
+  - 100
+  - 100
+  - 18
+  - 64
+  - 0
+  - 38
+  - 54
+  - 26
+  - 0
+  - 128
+  - 6
+  - 68
+  - 101
+  - 100
+  - 117
+  - 99
+  - 116
+  - 18
+  - 64
+  - 0
+  - 1
+  - 0
+  - 40
+  - 100
+  - 53
+  - 0
+  - 52
+  - 0
+  - 35
+  - 13
+  - 64
+  - 0
+  - 2
+  - 34
+  - 67
+  - 40
+  - 52
+  - 0
+  - 34
+  - 9
+  - 103
+  - 66
+  - 255
+  - 245
+  - 40
+  - 100
+  - 53
+  - 0
+  - 40
+  - 52
+  - 0
+  - 34
+  - 8
+  - 103
+  - 34
+  - 67
+  - 34
+  - 67
+  - 35
+  - 67
+  - 35
+  - 67
+  - 35
+  - 67
+  - 40
+  - 35
+  - 103
+  - 34
+  - 67
+tealCode: |
+  #pragma version 6
+  txn ApplicationID
+  int 0
+  ==
+  bnz main_l18
+  txn OnCompletion
+  int OptIn
+  ==
+  bnz main_l17
+  txn OnCompletion
+  int CloseOut
+  ==
+  bnz main_l16
+  txn OnCompletion
+  int UpdateApplication
+  ==
+  bnz main_l15
+  txn OnCompletion
+  int DeleteApplication
+  ==
+  bnz main_l14
+  txn OnCompletion
+  int NoOp
+  ==
+  bnz main_l7
+  err
+  main_l7:
+  global GroupSize
+  int 1
+  ==
+  assert
+  txna ApplicationArgs 0
+  byte "Add"
+  ==
+  bnz main_l13
+  txna ApplicationArgs 0
+  byte "Deduct"
+  ==
+  bnz main_l10
+  err
+  main_l10:
+  byte "Count"
+  app_global_get
+  store 0
+  load 0
+  int 0
+  >
+  bnz main_l12
+  main_l11:
+  int 1
+  return
+  main_l12:
+  byte "Count"
+  load 0
+  int 1
+  -
+  app_global_put
+  b main_l11
+  main_l13:
+  byte "Count"
+  app_global_get
+  store 0
+  byte "Count"
+  load 0
+  int 1
+  +
+  app_global_put
+  int 1
+  return
+  main_l14:
+  int 1
+  return
+  main_l15:
+  int 0
+  return
+  main_l16:
+  int 0
+  return
+  main_l17:
+  int 0
+  return
+  main_l18:
+  byte "Count"
+  int 0
+  app_global_put
+  int 1
+  return

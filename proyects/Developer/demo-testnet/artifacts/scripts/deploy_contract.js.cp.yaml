@@ -1,0 +1,15 @@
+purestake:
+    timestamp: 1669422021988
+    metadata: {}
+    asa: {}
+    ssc:
+        sc_approval.py-sc_clearstate.py:
+            1669422022:
+                creator: J7GZORSYMMRMWIGLUJR6MCD45J3Q3MPME7H6YMNET6O45W574ZK2KK6B3M
+                txId: W7EWRO5UAZCBOVKBC3ONO26VFWPNUL2XO5G65GHLAMKNSOVFMYQQ
+                confirmedRound: 25813175
+                appID: 145541430
+                applicationAccount: SIRQA2OWYD7CODNE3KMZMKRYACIP7G2UUSFIB2VW2JF3C6KC7DG6Z4SYPY
+                timestamp: 1669422022
+                deleted: false
+    dLsig: {}
